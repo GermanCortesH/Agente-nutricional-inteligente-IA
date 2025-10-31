@@ -1,0 +1,11 @@
+# Directorios de entornos virtuales (Venvs)
+entorno_agente/
+venv/
+.venv/
+
+# Base de datos de vectores ChromaDB
+chroma_db/
+
+# Caché de Python
+__pycache__/
+*.pyc
