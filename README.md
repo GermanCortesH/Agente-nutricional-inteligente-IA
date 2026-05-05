@@ -1,6 +1,6 @@
-# 🥗 Agente Nutricional Inteligente (IA RAG)
+# Agente Nutricional Inteligente (IA RAG)
 
-## ✨ Visión General del Proyecto
+## Visión General del Proyecto
 
 Este proyecto implementa un agente de Inteligencia Artificial capaz de generar **planes y recomendaciones nutricionales personalizadas** en tiempo real. Utiliza la arquitectura **RAG (Retrieval-Augmented Generation)** con **LangChain** y **ChromaDB** para consultar una base de datos de recetas (*Knowledge Base*) antes de formular una respuesta con el modelo de lenguaje grande (LLM) **Llama 3** (a través de Ollama).
 
@@ -8,7 +8,7 @@ El objetivo es ofrecer planes dietéticos basados en parámetros específicos de
 
 -----
 
-## 🚀 Características Clave
+## Características Clave
 
   * **Generación Aumentada (RAG):** El agente consulta una base de datos de recetas indexada en **ChromaDB** antes de generar la respuesta. Esto asegura que las recomendaciones sean factibles y específicas.
   * **Agente Conversacional:** Utiliza el framework **LangChain** para orquestar el flujo de trabajo entre la base de datos, el LLM y la herramienta de búsqueda.
@@ -18,7 +18,7 @@ El objetivo es ofrecer planes dietéticos basados en parámetros específicos de
 
 -----
 
-## ⚙️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 El proyecto sigue un flujo RAG estándar de IA generativa:
 
@@ -30,7 +30,7 @@ El proyecto sigue un flujo RAG estándar de IA generativa:
 
 -----
 
-## 💻 Instalación y Ejecución Local
+## Instalación y Ejecución Local
 
 Sigue estos pasos para levantar el proyecto en tu máquina.
 
@@ -79,7 +79,7 @@ La aplicación se abrirá automáticamente en tu navegador. Al iniciar por prime
 
 -----
 
-## 🤝 Contribuciones
+## Contribuciones
 
 Si tienes sugerencias para mejorar el *prompt*, añadir más herramientas o incluir bases de datos más grandes, ¡tus contribuciones son bienvenidas\!
 
