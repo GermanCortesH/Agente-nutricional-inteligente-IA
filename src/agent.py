@@ -97,13 +97,8 @@ tools = calculation_tools + [busqueda_recetas]
 def create_nutrition_agent():
     """Configura y devuelve el ejecutor final del Agente Nutricional Inteligente."""
     
-    # 2. Inicializar el LLM de Ollama
-    # Usamos llama3 (debes asegurarte de que esté instalado via 'ollama pull llama3')
+    # Inicializar el LLM de Ollama
     llm = Ollama(model="llama3:8b-instruct-q4_0") 
-
-    # 3. Construir el Prompt final del Agente
-    # Utilizamos MessagesPlaceholder para que LangChain maneje el historial de la conversación 
-    # y la inyección de los pasos de Tool Calling.
     # prompt = ChatPromptTemplate.from_messages(
     #     [
     #         ("system", SYSTEM_PROMPT),
