@@ -18,20 +18,16 @@ def load_and_preprocess_data(file_path):
         print(f"Error: No se encontró el archivo en la ruta {file_path}. Asegúrate de que el archivo esté en data/.")
         return None
     
-    # 1. Eliminar filas con valores nulos en columnas críticas (macros)
-    # y asegurarse de que los macros sean no-negativos
+
     cols_to_check = ['calories', 'protein', 'fat']
     data = data.dropna(subset=cols_to_check)
     data = data[(data[cols_to_check] >= 0).all(axis=1)]
     
-    # 2. Calcular los gramos de carbohidratos
+
     # Carbs (g) = [Calories - (Protein * 4 + Fat * 9)] / 4
     data['carbs_g'] = (data['calories'] - (data['protein'] * 4 + data['fat'] * 9)) / 4
     
-    # Opcional: Eliminar recetas con carbohidratos negativos (errores de datos)
     data = data[data['carbs_g'] >= 0]
-    
-    # Seleccionar solo las columnas que el Agente usará (macros y título)
     data = data[['title', 'calories', 'protein', 'fat', 'carbs_g']].copy()
     
     return data
@@ -53,7 +49,7 @@ def get_retriever_from_db(persist_directory: str = "chroma_db", collection_name:
             embedding_function=embeddings, 
             persist_directory=str(persist_path)
         )
-        # Una pequeña verificación para ver si tiene documentos
+        
         if vectorstore._collection.count() > 0:
             print(f"ChromaDB cargada exitosamente desde {persist_directory} (Documentos: {vectorstore._collection.count()})")
             return vectorstore.as_retriever()
